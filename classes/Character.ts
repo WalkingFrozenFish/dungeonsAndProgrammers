@@ -1,23 +1,47 @@
+export interface ICharacter {
+    name: string
+    health: number
+    damage: number
+    canAtack: boolean
+}
+
 export class Character {
     name: string
     health: number
-    strength: number
+    damage: number
+    canAtack: boolean
 
-    constructor(name: string, health: number, strength: number) {
+    constructor(name: string, health: number, damage: number, canAtack: boolean) {
         this.name = name
         this.health = health
-        this.strength = strength
+        this.damage = damage
+        this.canAtack = canAtack
     }
 
-    atack = (target: Character) => {
-        target.health -= 10
+    public atack = (target: Character) => {
+        if (this.canAtack === false && this.health <= 0) {
+            this.health = 0
+            this.canAtack = false
+            console.log(`${this.name} - не может атаковать`)
+        }
+
+        if (this.canAtack && target.health >= 0) {
+            target.health -= this.damage
+
+            if (target.health <= 0) {
+                target.health = 0
+                target.canAtack = false
+                console.log(`${target.name} - уничтожен`)
+            }
+        }
     }
 
-    info = () => {
-        console.log(`
-            Name - ${this.name}
-            Health - ${this.health}
-            Strength - ${this.strength}
+    characterInfo = () => {
+        console.log(`Name - ${this.name}\nHealth - ${this.health}\ndamage - ${this.damage}
         `)
+    }
+
+    allInfo = (target: Character) => {
+        console.log(`${this.name} - health(${this.health}), ${target.name} - health(${target.health})`)
     }
 }
