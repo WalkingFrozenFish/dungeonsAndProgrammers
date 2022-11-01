@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon js/classes/Application.js",
-    "start": "node js/classes/Application.js"
+    "dev": "nodemon js/index.js",
+    "start": "node js/index.js",
+    "example": "nodemon js/examples.js",
+    "app": "nodemon js/classes/Application.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +16,7 @@
     "nodemon": "^2.0.20"
   },
   "dependencies": {
+    "clui": "^0.3.6",
     "figlet": "^1.5.2"
   }
 }

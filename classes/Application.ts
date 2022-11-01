@@ -1,3 +1,5 @@
+import { Character } from "./Character"
+
 const figlet = require("figlet")
 const readline = require('readline').createInterface({
     input: process.stdin,
@@ -9,9 +11,29 @@ export class Application {
         console.log("Application module - work")
     }
 
+    mainCharacter: Character = new Character("Wizzard", 100, 10, true)
+    enemy: Character = new Character("Warrior", 100, 10, true)
+
     main = (): void => {
-        console.log("main func")
-        readline.close()
+        // this.mainCharacter = new Character("Wizzard", 100, 10, true)
+        // this.enemy = new Character("Warrior", 100, 10, true)
+
+        readline.question(`Выберите действие:\n1: Атаковать\n2: Инфо\n3: Показать инвентарь`, (userInput: string) => {
+            if (userInput == "1") {
+                console.clear()
+                this.mainCharacter.atack(this.enemy)
+                // this.main()
+            } else if (userInput == "2") {
+                console.clear()
+                this.mainCharacter.allInfo(this.enemy)
+                // this.main()
+            } else if (userInput == "3") {
+                console.clear()
+                this.mainCharacter.inventory.showInventory()
+                // this.main()
+            }
+            this.main()
+        })
     }
 
     mainMenu = (): void => {

@@ -5,11 +5,15 @@
 //     canAtack: boolean
 // }
 
+import { Inventory } from "./Inventory"
+
 export class Character {
     name: string
     health: number
     damage: number
     canAtack: boolean
+
+    inventory: Inventory = new Inventory()
 
     constructor(name: string, health: number, damage: number, canAtack: boolean) {
         this.name = name
