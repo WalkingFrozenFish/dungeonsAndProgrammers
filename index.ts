@@ -10,16 +10,18 @@ const readline = require('readline').createInterface({
 
 const figlet = require("figlet")
 
-// figlet.text("Dungeons & Programmers", {
-//     font: "straight"
-//     // font: "short"
-// }, (err: string, data: string) => {
-//     if (err) {
-//         console.log(err)
-//     } else {
-//         console.log(data)
-//     }
-// })
+figlet.text("Dungeons & Programmers", {
+    font: "straight"
+    // font: "short"
+}, (err: string, data: string) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+        app()
+
+    }
+})
 
 const warrior = new Character("Warrior", 100, 15, true)
 const wizzard = new Character("Wizzard", 100, 25, true)
@@ -69,4 +71,3 @@ const app = () => {
     })
 }
 
-app()
