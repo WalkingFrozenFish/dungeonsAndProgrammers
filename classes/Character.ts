@@ -1,9 +1,9 @@
-export interface ICharacter {
-    name: string
-    health: number
-    damage: number
-    canAtack: boolean
-}
+// export interface ICharacter {
+//     name: string
+//     health: number
+//     damage: number
+//     canAtack: boolean
+// }
 
 export class Character {
     name: string

@@ -81,6 +81,8 @@ inventoryExample.dropItem(item1)
 inventoryExample.showInventory()
 inventoryExample.getItem(item4)
 inventoryExample.showInventory()
+inventoryExample.getItem(item1)
+inventoryExample.showInventory()
 
 // inventoryExample.getItem(item1)
 // inventoryExample.getItem(item2)
